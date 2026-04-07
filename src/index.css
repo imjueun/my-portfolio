@@ -3,10 +3,15 @@
 @tailwind utilities;
 
 :root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  text-align: left; /* 중앙 정렬 대신 왼쪽 정렬이 포트폴리오에 더 깔끔할 수 있습니다 */
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
-  --border: #e5e4e7;
+
   --code-bg: #f4f3ec;
   --accent: #aa3bff;
   --accent-bg: rgba(170, 59, 255, 0.1);
@@ -56,10 +61,20 @@
 
 body {
   margin: 0;
+
+  padding: 0;
+  overflow-x: hidden;
 }
 
 #root {
-  width: 1126px;
+  width: 100%;
+  max-width: 100%;
+
+  padding: 0;
+
+  /* 테두리도 원치 않으시면 지워주세요 */
+  border-inline: none;
+
   max-width: 100%;
   margin: 0 auto;
   text-align: center;

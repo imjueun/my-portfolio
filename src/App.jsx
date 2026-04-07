@@ -1,10 +1,15 @@
-import About from './pages/About'; // 1. 실제 파일명이 About.jsx인지 확인!
+import About from './pages/About';
+import Skills from './pages/Skills';
 
 export default function App() {
   return (
-    <div className="size-full">
-      {/* 2. 태그를 /> 로 반드시 닫아주세요 */}
+    /* w-full: 너비 100%
+       overflow-x-hidden: 가로 스크롤 방지
+       p-0: 모든 패딩 제거 
+    */
+    <div className="w-full min-h-screen p-0 m-0 overflow-x-hidden bg-[#fafafa]">
       <About />
+      <Skills />
     </div>
   );
 }
