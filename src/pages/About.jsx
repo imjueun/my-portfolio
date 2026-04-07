@@ -1,4 +1,4 @@
-const AboutMe = () => {
+const About = () => {
   return (
     <section id="about" className="pt-48 pb-32 border-b border-gray-100">
       <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400">
@@ -18,4 +18,4 @@ const AboutMe = () => {
   );
 };
 
-export default AboutMe;
+export default About;

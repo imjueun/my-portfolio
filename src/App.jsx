@@ -1,18 +1,10 @@
-import AboutMe from './pages/AboutMe';
-import Project from './pages/project';
-import Skill from './pages/Skill';
+import About from './pages/About'; // 1. 실제 파일명이 About.jsx인지 확인!
 
 export default function App() {
   return (
     <div className="size-full">
-      <Header />
-
-      <AboutMe />
-      <Skill />
-      <Project />
-      <Contact />
-
-      <Footer />
+      {/* 2. 태그를 /> 로 반드시 닫아주세요 */}
+      <About />
     </div>
   );
 }
