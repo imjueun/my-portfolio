@@ -1,7 +1,4 @@
-import Header from './components/header';
-import Footer from './components/footer';
 import AboutMe from './pages/AboutMe';
-import Main from './pages/main';
 import Project from './pages/project';
 import Skill from './pages/Skill';
 
