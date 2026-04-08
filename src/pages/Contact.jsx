@@ -74,7 +74,7 @@ const Contact = () => {
         </motion.div>
 
         <motion.div variants={item} className="flex justify-center mt-8">
-           <img src='/src/assets/contact/conpeti_img.jpeg' className='w-20' alt="Contact decoration"/>
+           <img src='/src/assets/contact/conpeti_img.png' className='w-20' alt="Contact decoration"/>
         </motion.div>
 
         <motion.div variants={container} className="space-y-4 mt-8">
