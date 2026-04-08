@@ -1,5 +1,6 @@
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { useState } from 'react';
+import decorationImg from '../assets/contact/conpeti_img.png';
 
 const Contact = () => {
   const [copied, setCopied] = useState(false);
@@ -74,7 +75,7 @@ const Contact = () => {
         </motion.div>
 
         <motion.div variants={item} className="flex justify-center mt-8">
-           <img src='/src/assets/contact/conpeti_img.png' className='w-20' alt="Contact decoration"/>
+           <img src={decorationImg} className='w-20' alt="Contact decoration"/>
         </motion.div>
 
         <motion.div variants={container} className="space-y-4 mt-8">

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import profileImg from '../../assets/contact/basic_img.png';
 
 const AboutImage = ({ variants }) => {
   return (
@@ -7,10 +8,9 @@ const AboutImage = ({ variants }) => {
       variants={variants}
       className="w-full max-w-[320px] aspect-square rounded-2xl overflow-hidden flex items-center justify-center mt-8"
 
-
     >
       
-      <img src="/src/assets/contact/basic_img.png" alt="Profile" className="w-full h-full object-cover" />
+      <img src={profileImg} alt="Profile" className="w-full h-full object-cover" />
     </motion.div>
   );
 };
