@@ -10,7 +10,7 @@ const AboutImage = ({ variants }) => {
 
     >
       
-      <img src="/public/favicon.png" alt="Profile" className="w-full h-full object-cover" />
+      <img src="/src/assets/contact/basic_img.jpeg" alt="Profile" className="w-full h-full object-cover" />
     </motion.div>
   );
 };
