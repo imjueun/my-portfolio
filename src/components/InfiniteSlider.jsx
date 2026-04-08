@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 import img1 from '../assets/about/skills_img_01.svg';
 import img2 from '../assets/about/skills_img_02.svg';
 import img3 from '../assets/about/skills_img_03.svg';
-import img4 from '../assets/about/skills_img_04.webp';
-import img5 from '../assets/about/skills_img_05.webp';
-import img6 from '../assets/about/skills_img_06.webp';
-import img7 from '../assets/about/skills_img_07.webp';
-import img8 from '../assets/about/skills_img_08.webp';
+import img4 from '../assets/about/skills_img_04.png';
+import img5 from '../assets/about/skills_img_05.png';
+import img6 from '../assets/about/skills_img_06.svg';
+import img7 from '../assets/about/skills_img_07.svg';
+import img8 from '../assets/about/skills_img_08.png';
 
 const InfiniteSlider = () => {
   const skillImages = [img1, img2, img3, img4, img5, img6, img7, img8];

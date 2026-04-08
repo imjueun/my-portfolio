@@ -58,7 +58,7 @@ const Career = () => {
       {/* 기술 스택 슬라이더 */}
       <div className="mt-12">
         <div className="px-8 md:px-16 max-w-7xl mx-auto w-full mb-8">
-          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">
+          <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-gray-400">
             Skills & Tools
           </span>
         </div>
