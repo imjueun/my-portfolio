@@ -1,51 +1,42 @@
-const About = () => {
-  return (
-    // min-h-screen으로 최소 높이를 화면 전체로 잡고, flex로 중앙 정렬을 제어합니다.
+import { motion } from 'framer-motion';
+import AboutImage from '../components/about/AboutImage';
+import AboutIntro from '../components/about/AboutIntro';
 
+const About = () => {
+  // 애니메이션 설정
+  const fadeInUp = {
+    initial: { opacity: 0, y: 30 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.8, ease: 'easeOut' },
+  };
+
+  return (
     <section
       id="about"
-      className="min-h-screen w-full flex flex-col justify-center px-8 md:px-16 bg-[#fafafa]"
+      className="min-h-screen w-full flex flex-col justify-center bg-[#fafafa] py-32"
     >
-      {/* 상단 라벨 */}
+      <div className="px-8 md:px-24 max-w-7xl mx-auto w-full">
+        {/* 상단 라벨 */}
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={fadeInUp}
+          className="mb-16"
+        >
+         <span className="text-[12px] font-bold uppercase tracking-[0.4em] text-gray-400">
+  About Me
+          </span>
+        </motion.div>
 
-      <div className="mb-8">
-        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 animate-fade-in">
-          Introduction
-        </span>
-      </div>
-
-      {/* 메인 타이틀: 화면의 주인공 역할 */}
-
-      <h2 className="text-5xl md:text-8xl font-light leading-[1.1] tracking-tighter text-[#1a1a1a]">
-        Frontend Developer & UI/UX Publisher
-      </h2>
-
-      {/* 상세 설명: 적절한 여백과 줄간격 */}
-
-      <br />
-
-      <div className="mt-12 md:mt-20">
-        <p className="text-xl md:text-2xl text-gray-600 leading-[1.8] font-light tracking-tight">
-          안녕하세요, <br />
-          사용자 경험을 이해하고 구현하는 개발자{' '}
-          <span className="font-bold text-black">이주은</span>입니다.
-        </p>
-
-        <br />
-
-        <p className="mt-6 text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl">
-          단순히 기능을 구현하는 것을 넘어, <br />
-          사용자가 느끼는 가치를 코드에 담아내고자 합니다. <br />
-          복잡한 문제를 직관적인 솔루션으로 바꾸는 과정을 즐깁니다.
-        </p>
-      </div>
-
-      {/* 스크롤 유도 아이콘 (선택 사항) */}
-
-      <div className="absolute bottom-40 left-1/2 -translate-x-1/2 animate-bounce hidden md:block">
-        <span className="text-[10px] uppercase tracking-widest text-black">
-          Scroll Down
-        </span>
+        {/* 2열 비대칭 그리드 레이아웃 (어울리는 비율로 조정) */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-24 items-center">
+          {/* 1. 이미지 섹션 */}
+          <AboutImage variants={fadeInUp} />
+          
+          {/* 2. 소개 섹션 */}
+          <AboutIntro variants={fadeInUp} />
+        </div>
       </div>
     </section>
   );
