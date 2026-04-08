@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Home from './pages/Home';
 import About from './pages/About';
 import Career from './pages/Career';
@@ -6,24 +6,26 @@ import Contact from './pages/Contact';
 import Header from './components/Header';
 import Project from './pages/Project';
 import Footer from './components/Footer';
+import TopButton from './components/TopButton';
 
 export default function App() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [headerScrolled, setHeaderScrolled] = useState(false);
+  const [showTopButton, setShowTopButton] = useState(false);
 
-  const handleScroll = (e) => {
-    if (e.target.scrollTop > 10) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      setHeaderScrolled(scrollY > 50);
+      setShowTopButton(scrollY > 500); // Home 섹션을 어느 정도 벗어났을 때
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <div 
-      className="w-full h-screen overflow-y-auto overflow-x-hidden snap-y snap-mandatory scroll-smooth bg-[#fafafa]"
-      onScroll={handleScroll}
-    >
-      <Header isScrolled={isScrolled} />
+    <div className="w-full bg-[#fafafa]">
+      <Header isScrolled={headerScrolled} />
+      <TopButton isVisible={showTopButton} />
       <div className="snap-start w-full">
         <Home />
       </div>

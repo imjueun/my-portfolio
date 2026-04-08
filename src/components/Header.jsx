@@ -4,14 +4,14 @@ const Header = ({ isScrolled }) => {
   return (
     <header 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/60 backdrop-blur-md shadow-sm py-4 text-gray-900 border-b border-gray-100' 
+     isScrolled 
+  ? 'bg-white/70 backdrop-blur-xl shadow-[0_1px_10px_rgba(0,0,0,0.05)] py-4 text-gray-900' 
           : 'bg-transparent py-6 text-gray-800'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
         <div className="text-xl md:text-2xl font-black tracking-tighter">
-          PORTFOLIO.
+         JUEUN-PORTFOLIO
         </div>
         <nav className="hidden md:flex gap-8 text-sm font-semibold tracking-wide uppercase">
              <a href="#home" className="hover:text-gray-500 transition-colors">Home</a>

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import AboutImage from '../components/about/AboutImage';
 import AboutIntro from '../components/about/AboutIntro';
+import ScrollButton from '../components/ScrollButton';
 
 const About = () => {
   // 애니메이션 설정
@@ -13,7 +14,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen w-full flex flex-col justify-center bg-[#fafafa] py-32"
+      className="relative min-h-screen w-full flex flex-col justify-center bg-[#fafafa] py-32"
     >
       <div className="px-8 md:px-24 max-w-7xl mx-auto w-full">
         {/* 상단 라벨 */}
@@ -38,6 +39,9 @@ const About = () => {
           <AboutIntro variants={fadeInUp} />
         </div>
       </div>
+
+      {/* 스크롤 가이드 버튼 */}
+      <ScrollButton targetId="career" />
     </section> 
   );
 };

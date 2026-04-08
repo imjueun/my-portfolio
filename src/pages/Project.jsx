@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import aidLogo from '../assets/project/aid-logo.png';
 import spinnoffLogo from '../assets/project/spinnoff-logo.png';
+import ScrollButton from '../components/ScrollButton';
 
 const Project = () => {
   // 애니메이션 설정
@@ -44,7 +45,7 @@ const Project = () => {
   return (
     <section
       id="project"
-      className="min-h-screen w-full flex flex-col justify-center py-24 px-8 md:px-16 bg-[#fafafa]"
+      className="relative min-h-screen w-full flex flex-col justify-center py-24 px-8 md:px-16 bg-[#fafafa]"
     >
       {/* 라벨 */}
       <motion.div
@@ -116,6 +117,9 @@ const Project = () => {
           </motion.div>
         ))}
       </motion.div>
+
+      {/* 스크롤 가이드 버튼 */}
+      <ScrollButton targetId="contact" />
     </section>
   );
 };

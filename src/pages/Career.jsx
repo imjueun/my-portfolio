@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import InfiniteSlider from '../components/InfiniteSlider';
 import AboutEdu from '../components/about/AboutEdu';
 import AboutWork from '../components/about/AboutWork';
+import ScrollButton from '../components/ScrollButton';
 
 const Career = () => {
   // 애니메이션 설정
@@ -22,7 +23,7 @@ const Career = () => {
   return (
     <section
       id="career"
-      className="min-h-screen w-full flex flex-col justify-center bg-[#fafafa] py-24"
+      className="relative min-h-screen w-full flex flex-col justify-center bg-[#fafafa] py-24"
     >
       <div className="px-8 md:px-16 max-w-7xl mx-auto w-full">
         {/* 상단 라벨 */}
@@ -65,6 +66,9 @@ const Career = () => {
         </div>
         <InfiniteSlider />
       </div>
+
+      {/* 스크롤 가이드 버튼 */}
+      <ScrollButton targetId="project" />
     </section>
   );
 };
