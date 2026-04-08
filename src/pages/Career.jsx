@@ -45,13 +45,14 @@ const Career = () => {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 mb-24"
+          className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-8 mb-24"
         >
-          {/* 1. 근무 이력 섹션 (work) */}
-          <AboutWork variants={fadeInUp} />
+          
           
           {/* 2. 교육 이력 섹션 (edu) */}
           <AboutEdu variants={fadeInUp} />
+          {/* 1. 근무 이력 섹션 (work) */}
+          <AboutWork variants={fadeInUp} />
         </motion.div>
       </div>
 

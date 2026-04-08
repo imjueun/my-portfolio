@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import aidLogo from '../assets/project/aid-logo.png';
+import spinnoffLogo from '../assets/project/spinnoff-logo.png';
 
 const Project = () => {
   // 애니메이션 설정
@@ -23,8 +25,9 @@ const Project = () => {
       description: '웹툰 보조작가 플랫폼',
       tags: ['HTML','CSS','JavaScript','React', 'Tailwind', 'Framer-motion'],
       color: 'bg-blue-50',
+      logo: aidLogo,
       link: 'https://aid-raw.com',
-      detailLink: 'https://prickly-baker-3b3.notion.site/AiD-32f35b948d6881dba6faf0f2c851ebd8?pvs=74' // 예시 상세 링크
+      detailLink: 'https://prickly-baker-3b3.notion.site/AiD-32f35b948d6881dba6faf0f2c851ebd8?pvs=74'
     },
     {
       id: 2,
@@ -32,8 +35,9 @@ const Project = () => {
       description: '웹툰 작가 포트폴리오 관리 & 작품 매칭 플랫폼',
       tags: ['HTML','CSS','JavaScript','React', 'Tailwind', 'Framer-motion'],
       color: 'bg-purple-50',
-      link: 'https://spinnoff.net', // 예시 바로가기 링크
-      detailLink: 'https://prickly-baker-3b3.notion.site/32f35b948d6881faa01afb43c0a64850' // 예시 상세 링크
+      logo: spinnoffLogo,
+      link: 'https://spinnoff.net',
+      detailLink: 'https://prickly-baker-3b3.notion.site/32f35b948d6881faa01afb43c0a64850'
     },
   ];
 
@@ -70,9 +74,9 @@ const Project = () => {
             whileHover={{ y: -10, transition: { duration: 0.3 } }}
             className={`cursor-pointer group relative overflow-hidden rounded-3xl p-8 h-[400px] flex flex-col justify-end border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-xl ${project.color}`}
           >
-            {/* 카드 배경 장식 */}
-            <div className="absolute top-0 right-0 p-8 transform translate-x-4 -translate-y-4 opacity-10 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500">
-               <div className="w-32 h-32 rounded-full border-[20px] border-black/20" />
+            {/* 카드 배경 장식 (로고로 대체) */}
+            <div className="absolute top-0 right-0 p-12 transition-all duration-500 opacity-70 group-hover:opacity-30 group-hover:scale-110">
+               <img src={project.logo} alt="" className="w-32 h-auto" />
             </div>
 
             <div className="relative z-10">

@@ -30,7 +30,7 @@ const About = () => {
         </motion.div>
 
         {/* 2열 비대칭 그리드 레이아웃 (어울리는 비율로 조정) */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-6 lg:gap-12 items-center">
           {/* 1. 이미지 섹션 */}
           <AboutImage variants={fadeInUp} />
           
@@ -38,7 +38,7 @@ const About = () => {
           <AboutIntro variants={fadeInUp} />
         </div>
       </div>
-    </section>
+    </section> 
   );
 };
 

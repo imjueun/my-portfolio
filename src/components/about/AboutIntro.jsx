@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 const AboutIntro = ({ variants }) => {
   return (
     <motion.div variants={variants} className="flex flex-col text-left mt-8">
+      <p className='font-bold text-lg'>LEE JUEUN</p><br/>
       <p className="text-sm md:text-sm text-gray-800 leading-relaxed font-light font-medium">
         안녕하세요!<br/>2년 차 UI 개발자 이주은입니다.<br /><br />
         HTML, CSS, JavaScript, React를 활용하여 사용자 중심의 인터페이스를 구현하고 있으며, <br />

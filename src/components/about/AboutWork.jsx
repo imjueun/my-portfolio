@@ -17,7 +17,7 @@ const AboutWork = ({ variants }) => {
     </p>
     <p className="text-sm mt-1">
       - 프론트엔드 개발 및 UI 퍼블리싱 전반 단독 담당<br/>
-- 일부 프로젝트 서비스 기획 참여
+- 웹툰 보조작가 서비스 'AiD' 기획 참여
     </p>
   </div>
 
