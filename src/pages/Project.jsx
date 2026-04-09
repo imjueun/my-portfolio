@@ -4,7 +4,6 @@ import spinnoffLogo from '../assets/project/spinnoff-logo.png';
 import ScrollButton from '../components/ScrollButton';
 
 const Project = () => {
-  // 애니메이션 설정
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
@@ -25,27 +24,27 @@ const Project = () => {
       title: 'AiD',
       description: '웹툰 보조작가 플랫폼',
       tags: ['HTML','CSS','JavaScript','React', 'Tailwind', 'Framer-motion'],
-      color: 'bg-blue-50',
       logo: aidLogo,
       link: 'https://aid-raw.com',
-      detailLink: 'https://prickly-baker-3b3.notion.site/AiD-32f35b948d6881dba6faf0f2c851ebd8?pvs=74'
+      detailLink: 'https://prickly-baker-3b3.notion.site/AiD-32f35b948d6881dba6faf0f2c851ebd8?pvs=74',
+      color: 'bg-gray-100',
     },
     {
       id: 2,
       title: 'Spinnoff',
       description: '웹툰 작가 포트폴리오 관리 & 작품 매칭 플랫폼',
       tags: ['HTML','CSS','JavaScript','React', 'Tailwind', 'Framer-motion'],
-      color: 'bg-purple-50',
       logo: spinnoffLogo,
       link: 'https://spinnoff.net',
-      detailLink: 'https://prickly-baker-3b3.notion.site/32f35b948d6881faa01afb43c0a64850'
+      detailLink: 'https://prickly-baker-3b3.notion.site/32f35b948d6881faa01afb43c0a64850',
+      color: 'bg-gray-100',
     },
   ];
 
   return (
     <section
       id="project"
-      className="relative min-h-screen w-full flex flex-col justify-center py-24 px-8 md:px-16 bg-[#fafafa]"
+      className="relative min-h-screen w-full flex flex-col justify-center py-24 px-8 md:px-16  bg-[#1a1a1a]"
     >
       {/* 라벨 */}
       <motion.div
@@ -66,49 +65,132 @@ const Project = () => {
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.1 }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mt-12 px-20"
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 px-4 md:px-0 max-w-4xl mx-auto w-full"
       >
         {projects.map((project) => (
           <motion.div
             key={project.id}
             variants={fadeInUp}
-            whileHover={{ y: -10, transition: { duration: 0.3 } }}
-            className={`cursor-pointer group relative overflow-hidden rounded-3xl p-8 h-[400px] flex flex-col justify-end border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-xl ${project.color}`}
+            whileHover={{ y: -10 }}
+            className="cursor-pointer group relative overflow-hidden rounded-3xl p-8 h-[400px] flex flex-col justify-end
+                       bg-white/70 backdrop-blur-xl
+                       transition-all duration-500"
+            style={{
+              boxShadow: `
+                0 10px 40px rgba(0,0,0,0.07),
+                0 1px 3px rgba(0,0,0,0.05),
+                inset 0 0 0 1px rgba(255,255,255,0.75),
+                inset 0 -1px 0 rgba(0,0,0,0.04)
+              `,
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.boxShadow = `
+                0 24px 64px rgba(0,0,0,0.13),
+                0 1px 3px rgba(0,0,0,0.06),
+                inset 0 0 0 1px rgba(255,255,255,0.75),
+                inset 0 -1px 0 rgba(0,0,0,0.05)
+              `;
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.boxShadow = `
+                0 10px 40px rgba(0,0,0,0.07),
+                0 1px 3px rgba(0,0,0,0.05),
+                inset 0 0 0 1px rgba(255,255,255,0.75),
+                inset 0 -1px 0 rgba(0,0,0,0.04)
+              `;
+            }}
           >
-            {/* 카드 배경 장식 (로고로 대체) */}
-            <div className="absolute top-0 right-0 p-12 transition-all duration-500 opacity-70 group-hover:opacity-30 group-hover:scale-110">
-               <img src={project.logo} alt="" className="w-32 h-auto" />
+            {/* 은은한 컬러 */}
+            <div className={`absolute inset-0  ${project.color}`} />
+
+            {/* 💧 Apple 물방울 로고 */}
+            <div className="absolute top-0 right-0 p-6 md:p-8 transition-all duration-500 group-hover:scale-110">
+              <div className="relative w-32 h-32 flex items-center justify-center">
+
+                {/* 물방울 베이스 */}
+                <div className="absolute inset-0 rounded-full 
+                                backdrop-blur-2xl 
+                                bg-white/10
+                                shadow-[inset_0_4px_12px_rgba(255,255,255,0.6),inset_0_-6px_10px_rgba(0,0,0,0.08),0_15px_30px_rgba(0,0,0,0.08)]" />
+
+                {/* 상단 하이라이트 */}
+                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-6 
+                                bg-white/60 blur-lg rounded-full opacity-70" />
+
+                {/* 내부 빛 */}
+                <div className="absolute inset-0 rounded-full bg-white/20 blur-xl opacity-30" />
+
+                {/* 유리 테두리 */}
+                <div className="absolute inset-0 rounded-full ring-1 ring-white/40" />
+
+                {/* 로고 */}
+                <img
+                  src={project.logo}
+                  alt=""
+                  className="relative w-16 h-auto object-contain transition-transform duration-500 group-hover:scale-110"
+                />
+
+              </div>
             </div>
 
+            {/* 콘텐츠 */}
             <div className="relative z-10">
-              <div className="flex gap-2 mb-4">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="text-[9px] font-bold px-2 py-1 bg-white/80 rounded-full text-gray-500 uppercase tracking-wider">
+              {/* 태그 1열 (3개) */}
+              <div className="flex gap-1.5 mb-1.5 flex-wrap">
+                {project.tags.slice(0, 3).map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-[9px] font-bold px-3 py-1
+                               bg-white/70 backdrop-blur-md
+                               rounded-full text-gray-600
+                               uppercase tracking-wider
+                               border border-white/40"
+                  >
                     {tag}
                   </span>
                 ))}
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">{project.title}</h3>
+              {/* 태그 2열 (3개) */}
+              <div className="flex gap-1.5 mb-4 flex-wrap">
+                {project.tags.slice(3, 6).map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-[9px] font-bold px-3 py-1
+                               bg-white/70 backdrop-blur-md
+                               rounded-full text-gray-600
+                               uppercase tracking-wider
+                               border border-white/40"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                {project.title}
+              </h3>
+
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
                 {project.description}
               </p>
-              
-              <div className='flex gap-4 justify-center'>
+
+              <div className='flex gap-4 justify-center mt-2 md:mt-4'>
                 <motion.a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   whileTap={{ scale: 0.95 }}
-                  className="inline-block px-6 py-2 bg-black text-white text-xs font-bold rounded-full cursor-pointer mt-4"
+                  className="px-6 py-2 bg-black/90 text-white text-xs font-bold rounded-full backdrop-blur-md"
                 >
                   바로가기
                 </motion.a>
+
                 <motion.a
                   href={project.detailLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   whileTap={{ scale: 0.95 }}
-                  className="inline-block px-6 py-2 bg-white text-black border border-black text-xs font-bold rounded-full cursor-pointer mt-4 transition-colors hover:bg-gray-100"
+                  className="px-6 py-2 bg-white/70 text-black border border-white/40 text-xs font-bold rounded-full backdrop-blur-md hover:bg-white"
                 >
                   자세히 보기
                 </motion.a>
@@ -118,7 +200,6 @@ const Project = () => {
         ))}
       </motion.div>
 
-      {/* 스크롤 가이드 버튼 */}
       <ScrollButton targetId="contact" />
     </section>
   );
