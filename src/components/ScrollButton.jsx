@@ -1,12 +1,10 @@
 import { motion } from 'framer-motion';
+import { smoothScrollTo } from '../utils/scrollTo';
 
 const ScrollButton = ({ targetId }) => {
   const handleClick = (e) => {
     e.preventDefault();
-    const element = document.getElementById(targetId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    smoothScrollTo(targetId, 1500); // 1.5초 동안 서서히 이동
   };
 
   return (

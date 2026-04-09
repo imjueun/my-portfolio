@@ -1,11 +1,9 @@
 import { motion, AnimatePresence } from 'framer-motion';
+import { smoothScrollTo } from '../utils/scrollTo';
 
 const TopButton = ({ isVisible }) => {
   const scrollToTop = () => {
-    const homeSection = document.getElementById('home');
-    if (homeSection) {
-      homeSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    smoothScrollTo('home', 1500);
   };
 
   return (
